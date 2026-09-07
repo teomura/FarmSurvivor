@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 644806679}
   - component: {fileID: 644806681}
   - component: {fileID: 644806682}
+  - component: {fileID: 644806683}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -538,6 +539,28 @@ MonoBehaviour:
   attackSpeed: 2
   swipeOffset: {x: 2, y: 0, z: 0}
   swipePrefab: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
+--- !u!95 &644806683
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644806678}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33ced2d322f7a3a4482c81c01a575ac4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &900325073
 GameObject:
   m_ObjectHideFlags: 0
