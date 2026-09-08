@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
         attackTimer += Time.deltaTime; //counter to attack start
         if (attackTimer >= attackSpeed)
         {
-            Instantiate(swipePrefab, transform.position + swipeOffset, transform.rotation, transform);// instantiate attack, attaching it to the player
+            Instantiate(swipePrefab, transform.position + swipeOffset * transform.localScale.x, transform.rotation, transform);// instantiate attack, attaching it to the player
             attackTimer = 0f;   
         }
     }

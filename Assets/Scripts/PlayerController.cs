@@ -19,6 +19,19 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
         transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
 
+        if (moveInput.x != 0) //change flip only on lateral input
+        {
+            if (moveInput.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = Vector3.one;
+            }
+        }
+            
+        
         GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
 
     }

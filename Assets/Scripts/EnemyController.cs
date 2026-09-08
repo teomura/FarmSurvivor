@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
 
     public float speed = 2f;
@@ -17,14 +17,16 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        GetComponent<SpriteRenderer>().flipX = player.transform.position.x < transform.position.x;
+
+        if (canMove)        
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        canMove = false;
+        canMove = false; //stopping enemies on collision
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
