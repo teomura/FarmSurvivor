@@ -4,6 +4,7 @@ public class EnemyFollow : MonoBehaviour
 {
 
     public float speed = 2f;
+    private bool canMove = true;
 
     private GameObject player;
 
@@ -16,6 +17,17 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (canMove)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        canMove = false;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+       canMove = true;
     }
 }
