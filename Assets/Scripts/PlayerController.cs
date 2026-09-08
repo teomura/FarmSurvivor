@@ -18,5 +18,8 @@ public class PlayerController : MonoBehaviour
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
         transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
         transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
+
+        GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
+
     }
 }
