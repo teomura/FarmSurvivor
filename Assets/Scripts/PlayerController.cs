@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,26 +32,39 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Mouse
-        /*var distance = Vector3.Distance(_destination, transform.position);
-        if (distance > 0.1f)
+        var distance = Vector3.Distance(_destination, transform.position);   
+
+        //Keyboard
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+
+        if (moveInput.magnitude != 0)
+        {
+            transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
+            transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
+
+            if (moveInput.x != 0) //change flip only on lateral input
+            {
+                if (moveInput.x < 0)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    transform.localScale = Vector3.one;
+                }
+            }
+
+            GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
+            _destination = transform.position;
+        }
+        else if (distance > 0.1f)
         {
             
             //direction = destination - source (math formula for direction)
             var direction = _destination - transform.position;
             direction.Normalize();//to avoid extralong vector - this normalizes it to 1
 
-            transform.Translate(direction * speed * Time.deltaTime);//movement
-        }*/
-
-
-        //Keyboard
-        Vector2 moveInput = moveAction.ReadValue<Vector2>();
-        transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
-        transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
-
-        if (moveInput.x != 0) //change flip only on lateral input
-        {
-            if (moveInput.x < 0)
+            if (direction.x < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
@@ -58,15 +72,18 @@ public class PlayerController : MonoBehaviour
             {
                 transform.localScale = Vector3.one;
             }
+            transform.Translate(direction * speed * Time.deltaTime);//movement
+            GetComponent<Animator>().SetBool("isMoving", true);
         }
-            
-        
-        GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
-
+        else
+        {
+            GetComponent<Animator>().SetBool("isMoving", false);
+        }
     }
     public void UpdatePosition(Vector3 pos)
     {
         _destination = pos;
+        _destination.z = transform.position.z;
     }
 
     [SerializeField]

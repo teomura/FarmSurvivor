@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,17 +22,10 @@ public class ClickToMove : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)// detecting input
         {
-            Ray rayOrigin = GetComponentInChildren <Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());// cast a ray for every mouse click
-            RaycastHit hitInfo;
+            Vector3 mousePosition = GetComponentInChildren<Camera>().ScreenToWorldPoint(Mouse.current.position.ReadValue());//get mouse position
 
-            if (Physics.Raycast(rayOrigin, out hitInfo))
-            {
-                if (hitInfo.collider.name == "Ground")
-                {
-                    Debug.Log("Floor CLicked");
-                    _player.UpdatePosition(hitInfo.point);//movement logic from player script here
-                }
-            }
+            Debug.Log("Floor CLicked");
+            _player.UpdatePosition(mousePosition);//movement logic from player script here        
 
         }
     }
