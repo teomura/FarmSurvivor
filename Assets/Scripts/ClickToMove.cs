@@ -21,7 +21,7 @@ public class ClickToMove : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)// detecting input
         {
-            Ray rayOrigin = GetComponent <Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());// cast a ray for every mouse click
+            Ray rayOrigin = GetComponentInChildren <Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());// cast a ray for every mouse click
             RaycastHit hitInfo;
 
             if (Physics.Raycast(rayOrigin, out hitInfo))
