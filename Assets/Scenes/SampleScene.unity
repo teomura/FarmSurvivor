@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   attackSpeed: 2
-  swipeOffset: {x: 2, y: 0, z: 0}
+  swipeOffset: {x: 1, y: 0, z: 0}
   swipePrefab: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
 --- !u!95 &644806683
 Animator:
@@ -753,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1206347577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,10 +1303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 2143979700629640763, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: m_Name
-      value: HpBar
-      objectReference: {fileID: 0}
     - target: {fileID: 3162126766505551065, guid: 197f51546415d814e905c3a6453a7029, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -1347,22 +1343,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3738009147851301982, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 16.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3738009147851301982, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 10.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385362883893841252, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -16.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385362883893841252, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -9.9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1379,18 +1359,6 @@ PrefabInstance:
     - target: {fileID: 5469909139437903420, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
       propertyPath: m_Name
       value: Skeleton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669437242408257020, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -13.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669437242408257020, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 6265207052639266518, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-      propertyPath: m_Name
-      value: HpBar
       objectReference: {fileID: 0}
     - target: {fileID: 7031240368111695171, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1501,25 +1469,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5173767188287266571, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-      propertyPath: m_Name
-      value: HpBar
-      objectReference: {fileID: 0}
     - target: {fileID: 5380905499951599813, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
       propertyPath: m_Name
       value: Zombie
-      objectReference: {fileID: 0}
-    - target: {fileID: 6052112705013037186, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 6052112705013037186, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7634350642643690500, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

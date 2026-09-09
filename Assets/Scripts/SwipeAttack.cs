@@ -19,4 +19,14 @@ public class SwipeAttack : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        EnemyController controller = other.GetComponent<EnemyController>();
+
+        if (controller != null)
+        {
+            controller.ChangeHealth(-damage);            
+        }
+    }
 }
