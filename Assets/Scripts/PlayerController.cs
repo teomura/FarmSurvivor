@@ -3,18 +3,44 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public InputAction moveAction;
+    public void UpdatePosition(Vector3 pos)
+    {
+        _destination = pos;
+    }
 
-    public float speed = 5f;
+    [SerializeField]
+    private Vector3 _destination; //stores the updated target position of the player
+   
+    
+    
+    
+    public InputAction moveAction;
+    //public InputAction clickToMove;
+    public float speed = 5.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveAction.Enable();
+        //clickToMove.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Mouse
+        var distance = Vector3.Distance(_destination, transform.position);
+        if (distance > 0.1f)
+        {
+            
+            //direction = destination - source (math formula for direction)
+            var direction = _destination - transform.position;
+            direction.Normalize();//to avoid extralong vector - this normalizes it to 1
+
+            transform.Translate(direction * speed * Time.deltaTime);//movement
+        }
+
+
+        //Keyboard
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
         transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
         transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
