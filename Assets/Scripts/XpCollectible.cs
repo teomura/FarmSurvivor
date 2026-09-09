@@ -6,7 +6,7 @@ public class XpCollectible : MonoBehaviour
     {
         PlayerController controller = other.GetComponent<PlayerController>();
 
-        if(controller != null && controller.exp < controller.maxXp)
+        if (controller != null && controller.Exp < controller.maxXp)
         {
             controller.ChangeXp(1);
             Destroy(gameObject);

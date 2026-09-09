@@ -3,25 +3,19 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
-{
-   
-
-   
-    
-    
+{    
     public InputAction moveAction;
     //public InputAction clickToMove;
     public float speed = 5.0f;
 
 
     public int maxHealth = 5;
-    public int health { get { return maxHealth; } }   
+    public int health { get { return currentHealth; } }   
     int currentHealth = 1;
 
     public int maxXp = 100;
-    public int exp { get { return currentXp; } }
+    public int Exp { get { return currentXp; } }
     int currentXp = 1;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +23,7 @@ public class PlayerController : MonoBehaviour
         moveAction.Enable();
         //clickToMove.Enable();
 
-        //currentHealth = maxHealth;
+        currentHealth = maxHealth;
         //currentXp = maxXp;
     }
 
@@ -80,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
+    // FixedUpdate has the same call rate as the physics system
     private void FixedUpdate()
     {
 
