@@ -242,8 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e455a21fc38ca264eaf520dcaf423c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  maxHealth: 1
+  maxHealth: 5
   speed: 2
+  healthBar: {fileID: 7034197724354617166}
 --- !u!61 &6653743539391239580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5669437242408257020}
   - component: {fileID: 850852870867808980}
+  - component: {fileID: 7034197724354617166}
   m_Layer: 5
   m_Name: HpBar
   m_TagString: Untagged
@@ -406,6 +408,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7034197724354617166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265207052639266518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebcd3d434486ab4389b08cb312dc43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  slider: {fileID: 850852870867808980}
 --- !u!1 &7549058653435233342
 GameObject:
   m_ObjectHideFlags: 0

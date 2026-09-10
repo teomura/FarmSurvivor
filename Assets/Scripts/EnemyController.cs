@@ -11,6 +11,13 @@ public class EnemyController : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField] HealthBar healthBar;
+
+    private void Awake()
+    {
+        healthBar = GetComponentInChildren<HealthBar>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -55,7 +62,9 @@ public class EnemyController : MonoBehaviour
     public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        healthBar.UpdateHealthBar(health, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+
         if (currentHealth == 0)
         {
             Destroy(gameObject);

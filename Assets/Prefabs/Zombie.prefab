@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8430989793622494141}
   - component: {fileID: 7634350642643690500}
+  - component: {fileID: 3028351438481269673}
   m_Layer: 5
   m_Name: HpBar
   m_TagString: Untagged
@@ -200,6 +201,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3028351438481269673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173767188287266571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ebcd3d434486ab4389b08cb312dc43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  slider: {fileID: 0}
 --- !u!1 &5380905499951599813
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,8 +323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e455a21fc38ca264eaf520dcaf423c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
-  maxHealth: 1
+  maxHealth: 5
   speed: 2
+  healthBar: {fileID: 3028351438481269673}
 --- !u!95 &9124165571921908258
 Animator:
   serializedVersion: 7
