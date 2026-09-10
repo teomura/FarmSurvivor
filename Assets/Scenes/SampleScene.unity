@@ -785,17 +785,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1366547453 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4879396242095708424, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-  m_PrefabInstance: {fileID: 986881027524119611}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ebcd3d434486ab4389b08cb312dc43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!1 &1476011018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,17 +1186,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &1672355784 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7634350642643690500, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-  m_PrefabInstance: {fileID: 3506716701974071226}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &1883639826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,17 +1278,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1889573741 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7034197724354617166, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-  m_PrefabInstance: {fileID: 2818968302390709761}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ebcd3d434486ab4389b08cb312dc43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
 --- !u!1 &1915569111 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1420684524254516931, guid: 197f51546415d814e905c3a6453a7029, type: 3}
@@ -1338,11 +1305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3162126766505551065, guid: 197f51546415d814e905c3a6453a7029, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -5.03
       objectReference: {fileID: 0}
     - target: {fileID: 3162126766505551065, guid: 197f51546415d814e905c3a6453a7029, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 3162126766505551065, guid: 197f51546415d814e905c3a6453a7029, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1376,14 +1343,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4879396242095708424, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 1672355784}
-    - target: {fileID: 5209781284484492601, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1366547453}
+    - target: {fileID: 3738009147851301982, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3738009147851301982, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977354073038538751, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385362883893841252, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385362883893841252, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1401,10 +1380,6 @@ PrefabInstance:
       propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2137783022342509107, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1889573741}
     - target: {fileID: 5469909139437903420, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
       propertyPath: m_Name
       value: Skeleton

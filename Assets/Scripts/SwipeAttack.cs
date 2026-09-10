@@ -29,4 +29,8 @@ public class SwipeAttack : MonoBehaviour
             controller.ChangeHealth(-damage);            
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("exit " + collision.name);
+    }
 }
