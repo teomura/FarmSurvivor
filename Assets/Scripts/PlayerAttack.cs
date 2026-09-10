@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
         if (attackTimer >= attackSpeed)
         {
             Instantiate(swipePrefab, transform.position + swipeOffset * transform.localScale.x, transform.rotation, transform);// instantiate attack, attaching it to the player
-            attackTimer = 0f;   
+            attackTimer = 0f;   // reset timer
         }
     }
     

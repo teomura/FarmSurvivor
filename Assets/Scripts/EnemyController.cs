@@ -3,12 +3,13 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int maxHealth = 5;
+    public float attackSpeed = 2.0f;
     public int health { get { return currentHealth; } }
     int currentHealth = 1;
 
     public float speed = 2f;
     private bool canMove = true;
-
+    private float attackTimer = 0f;
     private GameObject player;
 
     [SerializeField] HealthBar healthBar;
@@ -40,20 +41,26 @@ public class EnemyController : MonoBehaviour
     {
 
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
         if (player != null)
         {
-            player.ChangeHealth(-1);
+            
+            attackTimer += Time.deltaTime; //counter to attack start
+            if (attackTimer >= attackSpeed)
+            {
+                player.ChangeHealth(-1);
+                attackTimer = 0f;//reset timer
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         canMove = false; //stopping enemies on collision
+        attackTimer = attackSpeed;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
