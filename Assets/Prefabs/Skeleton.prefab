@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
   maxHealth: 5
   speed: 2
-  healthBar: {fileID: 7034197724354617166}
+  healthBar: {fileID: 0}
 --- !u!61 &6653743539391239580
 BoxCollider2D:
   m_ObjectHideFlags: 0
