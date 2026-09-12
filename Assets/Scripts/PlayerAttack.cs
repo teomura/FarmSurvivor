@@ -16,12 +16,17 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackTimer += Time.deltaTime; //counter to attack start
-        if (attackTimer >= attackSpeed)
+        attackTimer += Time.deltaTime;
+        bool isAttacking = attackTimer >= attackSpeed;
+        GetComponent<Animator>().SetBool("isAttacking", isAttacking);
+        //counter to attack start
+        if (isAttacking)
         {
             Instantiate(swipePrefab, transform.position + swipeOffset * transform.localScale.x, transform.rotation, transform);// instantiate attack, attaching it to the player
             attackTimer = 0f;   // reset timer
+           
         }
+
     }
     
 }
