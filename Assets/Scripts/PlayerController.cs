@@ -1,10 +1,13 @@
 using System;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] 
+    TextMeshProUGUI levelText;
     [SerializeField]
     HealthBar healthBar;
 
@@ -21,16 +24,16 @@ public class PlayerController : MonoBehaviour
 
     public int maxXp = 100;
     public int Exp { get { return currentXp; } }
-    int currentXp = 1;
-
+    int currentXp = 0;
+    int level = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         moveAction.Enable();
         //clickToMove.Enable();
-
         currentHealth = maxHealth;
         //currentXp = maxXp;
+        levelText.text = "Level 1";
     }
 
     // Update is called once per frame
@@ -107,13 +110,23 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthBar.UpdateHealthBar(health, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
     }
     public void ChangeXp(int amount)
     {
         currentXp = Mathf.Clamp(currentXp + amount, 0, maxXp);
-        xpBar.UpdateHealthBar(currentXp, maxXp);
-        Debug.Log(currentXp + "/" + maxXp);
+        xpBar.UpdateHealthBar(currentXp, maxXp);        
+        
+        if (currentXp == maxXp)
+        {
+            LevelUp();
+        }
+    }
+    private void LevelUp()
+    {
+        level = level + 1;//increase lvl
+        levelText.text = "Level " + level.ToString();//change level
+        currentXp = 0;//reset bar
+        xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
     }
 
 }

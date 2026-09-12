@@ -71,7 +71,6 @@ public class EnemyController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthBar.UpdateHealthBar(health, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
 
         if (currentHealth == 0)
         {
