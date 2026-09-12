@@ -242,7 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e455a21fc38ca264eaf520dcaf423c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
+  expPrefab: {fileID: 3262279128715718745, guid: 3eedc326c3cf5764aae264ee238ca29b, type: 3}
   maxHealth: 5
+  attackSpeed: 2
   speed: 2
   healthBar: {fileID: 7034197724354617166}
 --- !u!61 &6653743539391239580

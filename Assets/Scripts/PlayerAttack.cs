@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float attackSpeed = 2.0f;
+    public float attackSpeed = 1.0f;
     public Vector3 swipeOffset;
     public GameObject swipePrefab;
     float attackTimer = 0f;

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public GameObject expPrefab;
     public int maxHealth = 5;
     public float attackSpeed = 2.0f;
     public int health { get { return currentHealth; } }
@@ -74,7 +75,9 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth == 0)
         {
+            Instantiate(expPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            
         }
     }
 }

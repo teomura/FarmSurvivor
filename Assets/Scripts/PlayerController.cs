@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
-{    
+{
+    [SerializeField]
+    HealthBar healthBar;
+
+    [SerializeField]
+    HealthBar xpBar;
     public InputAction moveAction;
     //public InputAction clickToMove;
     public float speed = 5.0f;
@@ -101,11 +106,13 @@ public class PlayerController : MonoBehaviour
     public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        healthBar.UpdateHealthBar(health, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
     public void ChangeXp(int amount)
     {
         currentXp = Mathf.Clamp(currentXp + amount, 0, maxXp);
+        xpBar.UpdateHealthBar(currentXp, maxXp);
         Debug.Log(currentXp + "/" + maxXp);
     }
 
