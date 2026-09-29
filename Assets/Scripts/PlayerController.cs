@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     HealthBar xpBar;
+
+    [SerializeField] UnityEvent onLevelUp;
     public InputAction moveAction;
     //public InputAction clickToMove;
     public float speed = 5.0f;
@@ -127,6 +130,7 @@ public class PlayerController : MonoBehaviour
         levelText.text = "Level " + level.ToString();//change level
         currentXp = 0;//reset bar
         xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
+        onLevelUp.Invoke();
     }
 
 }
