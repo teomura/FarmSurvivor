@@ -288,6 +288,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 651050929}
+        m_TargetAssemblyTypeName: SwipeAttack, Assembly-CSharp
+        m_MethodName: IncreaseDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &263833427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +428,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 644806681}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: IncreaseHealth
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1074,6 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19333b82489c97242ac84a5a4cd9793f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  swipe: {fileID: 651050929}
   attackSpeed: 1
   swipeOffset: {x: 1, y: 0, z: 0}
   swipePrefab: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
@@ -1193,6 +1218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 644806680}
     m_Modifications:
+    - target: {fileID: -6021370008899347847, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2464806866810567255, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -1239,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915379243047665516, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
       propertyPath: m_Name
@@ -1259,6 +1288,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2464806866810567255, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
   m_PrefabInstance: {fileID: 651050926}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &651050929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -336480734703491891, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
+  m_PrefabInstance: {fileID: 651050926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19aa06d0751acf8498eb67a17e0bc6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwipeAttack
 --- !u!1 &659191667
 GameObject:
   m_ObjectHideFlags: 0

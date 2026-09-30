@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] SwipeAttack swipe;
     public float attackSpeed = 1.0f;
     public Vector3 swipeOffset;
     public GameObject swipePrefab;
@@ -22,9 +23,8 @@ public class PlayerAttack : MonoBehaviour
         //counter to attack start
         if (isAttacking)
         {
-            Instantiate(swipePrefab, transform.position + swipeOffset * transform.localScale.x, transform.rotation, transform);// instantiate attack, attaching it to the player
             attackTimer = 0f;   // reset timer
-           
+            swipe.gameObject.SetActive(true);
         }
 
     }

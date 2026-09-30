@@ -16,7 +16,8 @@ public class SwipeAttack : MonoBehaviour
         timeToLive -= Time.deltaTime;
         if (timeToLive <= 0f)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            timeToLive = 0.3f;
         }
     }
 
@@ -28,6 +29,11 @@ public class SwipeAttack : MonoBehaviour
         {
             controller.ChangeHealth(-damage);            
         }
+    }
+    public void IncreaseDamage(int amount)
+    {
+        damage += amount;
+        Debug.Log(damage);
     }
     
 }

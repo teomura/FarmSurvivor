@@ -132,5 +132,9 @@ public class PlayerController : MonoBehaviour
         xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
         onLevelUp.Invoke();
     }
+    public void IncreaseHealth(int amount)
+    {
+         maxHealth += amount;
+    }
 
 }
