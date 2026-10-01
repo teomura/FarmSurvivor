@@ -7,15 +7,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] 
-    TextMeshProUGUI levelText;
-    [SerializeField]
-    HealthBar healthBar;
+    [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] HealthBar healthBar;
 
-    [SerializeField]
-    HealthBar xpBar;
-
+    [SerializeField] HealthBar xpBar;
     [SerializeField] UnityEvent onLevelUp;
+
+    [SerializeField] UnityEvent onDeath;
     public InputAction moveAction;
     //public InputAction clickToMove;
     public float speed = 5.0f;
@@ -91,6 +89,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<Animator>().SetBool("isMoving", false);
         }
     }
+
     public void UpdatePosition(Vector3 pos)
     {
         _destination = pos;
@@ -113,6 +112,11 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         healthBar.UpdateHealthBar(health, maxHealth);
+
+        if (currentHealth <= 0)
+        {
+            onDeath.Invoke();
+        }
     }
     public void ChangeXp(int amount)
     {
