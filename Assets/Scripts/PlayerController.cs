@@ -138,7 +138,8 @@ public class PlayerController : MonoBehaviour
     }
     public void IncreaseHealth(int amount)
     {
-         maxHealth += amount;
+        maxHealth += amount;
+        healthBar.UpdateHealthBar(health, maxHealth);
     }
 
 }

@@ -1218,7 +1218,7 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   speed: 5
-  maxHealth: 1
+  maxHealth: 50
   maxXp: 3
   _destination: {x: 0, y: 0, z: 0}
 --- !u!114 &644806682
@@ -1623,7 +1623,7 @@ Transform:
   m_GameObject: {fileID: 675418935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.42, y: -4.5, z: 0}
+  m_LocalPosition: {x: -38.94, y: -5.04, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2557,6 +2557,8 @@ MonoBehaviour:
   - {fileID: 5380905499951599813, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
   - {fileID: 5469909139437903420, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
   - {fileID: 1420684524254516931, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+  spawnRangeX: 35
+  spawnRangeY: 35
 --- !u!1 &1286278472
 GameObject:
   m_ObjectHideFlags: 0
@@ -19377,7 +19379,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: 1.09, z: 10}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalScale: {x: 80, y: 80, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
