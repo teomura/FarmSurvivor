@@ -2,20 +2,17 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] SwipeAttack swipe;
+    [SerializeField] private SwipeAttack swipe;
     public float attackSpeed = 1.0f;
-    public Vector3 swipeOffset;
-    public GameObject swipePrefab;
-    float attackTimer = 0f;
+    private float attackTimer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         attackTimer += Time.deltaTime;
         bool isAttacking = attackTimer >= attackSpeed;
@@ -26,7 +23,10 @@ public class PlayerAttack : MonoBehaviour
             attackTimer = 0f;   // reset timer
             swipe.gameObject.SetActive(true);
         }
-
     }
-    
+
+    public SwipeAttack GetSwipeAttack()
+    {
+        return swipe;
+    }
 }

@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 263833427}
   - component: {fileID: 263833426}
   m_Layer: 5
-  m_Name: MoreDamage
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,10 +333,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 651050929}
-        m_TargetAssemblyTypeName: SwipeAttack, Assembly-CSharp
-        m_MethodName: IncreaseDamage
-        m_Mode: 3
+      - m_Target: {fileID: 931678261}
+        m_TargetAssemblyTypeName: LevelUpMenu, Assembly-CSharp
+        m_MethodName: OnButton2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 386782983}
   - component: {fileID: 386782982}
   m_Layer: 5
-  m_Name: MoreLife
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,10 +477,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 644806681}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: IncreaseHealth
-        m_Mode: 3
+      - m_Target: {fileID: 931678261}
+        m_TargetAssemblyTypeName: LevelUpMenu, Assembly-CSharp
+        m_MethodName: OnButton1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 442611990}
   - component: {fileID: 442611989}
   m_Layer: 5
-  m_Name: Option1Text
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,6 +1037,7 @@ GameObject:
   - component: {fileID: 644806684}
   - component: {fileID: 644806685}
   - component: {fileID: 644806687}
+  - component: {fileID: 644806688}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1219,7 +1220,7 @@ MonoBehaviour:
     m_Flags: 0
     m_Priority: 0
   speed: 5
-  maxHealth: 50
+  maxHealth: 100
   maxXp: 3
   _destination: {x: 0, y: 0, z: 0}
 --- !u!114 &644806682
@@ -1236,8 +1237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   swipe: {fileID: 651050929}
   attackSpeed: 1
-  swipeOffset: {x: 1, y: 0, z: 0}
-  swipePrefab: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
 --- !u!95 &644806683
 Animator:
   serializedVersion: 7
@@ -1360,6 +1359,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRangedAttack
   isUnlocked: 0
   attackSpeed: 1
+--- !u!114 &644806688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644806678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5692d980ff57b4da7c83134bff5f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &651050926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1371,6 +1382,10 @@ PrefabInstance:
     - target: {fileID: -6021370008899347847, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -336480734703491891, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2464806866810567255, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2118,6 +2133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea6243378e58054faf86ed86b874c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerUpgradeManager: {fileID: 644806688}
   button1: {fileID: 386782982}
   button2: {fileID: 263833426}
   text1: {fileID: 442611989}
@@ -2590,7 +2606,7 @@ GameObject:
   - component: {fileID: 1286278475}
   - component: {fileID: 1286278474}
   m_Layer: 5
-  m_Name: Option2Text
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

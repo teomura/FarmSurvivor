@@ -27,4 +27,19 @@ public class PlayerRangedAttack : MonoBehaviour
             }
         }
     }
+
+    public void IncreaseSpeed(float amount)
+    {
+        attackSpeed += amount;
+    }
+
+    public float GetAttackSpeed()
+    {
+        return attackSpeed;
+    }
+
+    public void Unlock()
+    {
+        isUnlocked = true;
+    }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979e7424276ae7f448c74d636473398a, type: 3}
   m_Name: Lifesteal
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  upgradeType: 8
+  upgradeType: 7
   modifier: 10
   image: {fileID: -201829820, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   description: Increase lifesteal by {0}%

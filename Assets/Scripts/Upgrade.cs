@@ -5,7 +5,6 @@ public enum UpgradeType
     HP,
     MovementSpeed,
 
-    PrimaryAttackUnlock,
     PrimaryAttackDamage,
     PrimaryAttackSpeed,
 
