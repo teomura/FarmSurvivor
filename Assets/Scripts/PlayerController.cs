@@ -1,34 +1,39 @@
-using System;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI levelText;
-    [SerializeField] HealthBar healthBar;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private HealthBar healthBar;
 
-    [SerializeField] HealthBar xpBar;
-    [SerializeField] UnityEvent onLevelUp;
+    [SerializeField] private HealthBar xpBar;
+    [SerializeField] private UnityEvent onLevelUp;
 
-    [SerializeField] UnityEvent onDeath;
+    [SerializeField] private UnityEvent onDeath;
     public InputAction moveAction;
+
     //public InputAction clickToMove;
     public float speed = 5.0f;
 
-
     public int maxHealth = 5;
-    public int health { get { return currentHealth; } }   
-    int currentHealth = 1;
+
+    public int health
+    { get { return currentHealth; } }
+
+    private int currentHealth = 1;
 
     public int maxXp = 100;
-    public int Exp { get { return currentXp; } }
-    int currentXp = 0;
-    int level = 1;
+
+    public int Exp
+    { get { return currentXp; } }
+
+    private int currentXp = 0;
+    private int level = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         moveAction.Enable();
         //clickToMove.Enable();
@@ -38,10 +43,10 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //Mouse
-        var distance = Vector3.Distance(_destination, transform.position);   
+        var distance = Vector3.Distance(_destination, transform.position);
 
         //Keyboard
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
@@ -68,7 +73,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (distance > 0.1f)
         {
-            
             //direction = destination - source (math formula for direction)
             var direction = _destination - transform.position;
             direction.Normalize();//to avoid extralong vector - this normalizes it to 1
@@ -99,14 +103,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Vector3 _destination;        //stores the updated target position of the player
 
-
-
     // FixedUpdate has the same call rate as the physics system
     private void FixedUpdate()
     {
-
     }
-
 
     public void ChangeHealth(int amount)
     {
@@ -118,16 +118,18 @@ public class PlayerController : MonoBehaviour
             onDeath.Invoke();
         }
     }
+
     public void ChangeXp(int amount)
     {
         currentXp = Mathf.Clamp(currentXp + amount, 0, maxXp);
-        xpBar.UpdateHealthBar(currentXp, maxXp);        
-        
+        xpBar.UpdateHealthBar(currentXp, maxXp);
+
         if (currentXp == maxXp)
         {
             LevelUp();
         }
     }
+
     private void LevelUp()
     {
         level = level + 1;//increase lvl
@@ -136,10 +138,10 @@ public class PlayerController : MonoBehaviour
         xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
         onLevelUp.Invoke();
     }
+
     public void IncreaseHealth(int amount)
     {
         maxHealth += amount;
         healthBar.UpdateHealthBar(health, maxHealth);
     }
-
 }
