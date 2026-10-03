@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 979e7424276ae7f448c74d636473398a, type: 3}
-  m_Name: MainAttackSpeed
+  m_Name: SlowAura
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  upgradeType: 4
+  upgradeType: 9
   modifier: 10
+  image: {fileID: 1807624531, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  description: Decreases enemy speed by {0}%

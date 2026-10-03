@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 979e7424276ae7f448c74d636473398a, type: 3}
-  m_Name: HP
+  m_Name: Lifesteal
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  upgradeType: 0
+  upgradeType: 8
   modifier: 10
+  image: {fileID: -201829820, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  description: Increase lifesteal by {0}%

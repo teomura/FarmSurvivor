@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum UpgradeType 
+public enum UpgradeType
 {
     HP,
     MovementSpeed,
@@ -23,4 +23,6 @@ public class Upgrade : ScriptableObject
     public UpgradeType upgradeType;
     public int modifier;
 
+    public Sprite image;
+    public string description;
 }
