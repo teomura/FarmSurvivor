@@ -63,4 +63,28 @@ public class PlayerUpgradeManager : MonoBehaviour
                 break;
         }
     }
+
+    public bool CanPerformUpgrade(Upgrade upgrade)
+    {
+        if (upgrade.upgradeType == UpgradeType.SecondaryAttackDamage)
+        {
+            return GetComponent<PlayerRangedAttack>().IsUnlocked();
+        }
+        else if (upgrade.upgradeType == UpgradeType.SecondaryAttackSpeed)
+        {
+            bool canPerform = GetComponent<PlayerRangedAttack>().IsUnlocked();
+            bool isValidSpeed = GetComponent<PlayerRangedAttack>().GetAttackSpeed() > 0.2f;
+            return canPerform && isValidSpeed;
+        }
+        else if (upgrade.upgradeType == UpgradeType.PrimaryAttackSpeed)
+        {
+            return GetComponent<PlayerAttack>().attackSpeed > 0.45f;
+        }
+        else if (upgrade.upgradeType == UpgradeType.MovementSpeed)
+        {
+            return GetComponent<PlayerController>().speed < 8f;
+        }
+
+        return true;
+    }
 }

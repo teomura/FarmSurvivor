@@ -32,13 +32,19 @@ public class LevelUpMenu : MonoBehaviour
         Time.timeScale = 0f;
 
         int firstUpgradeIndex = Random.Range(0, upgrades.Count);
+        firstUpgrade = upgrades[firstUpgradeIndex];
+        while (!playerUpgradeManager.CanPerformUpgrade(firstUpgrade))
+        {
+            firstUpgradeIndex = Random.Range(0, upgrades.Count);
+            firstUpgrade = upgrades[firstUpgradeIndex];
+        }
         int secondUpgradeIndex = Random.Range(0, upgrades.Count);
-        while (secondUpgradeIndex == firstUpgradeIndex)
+        secondUpgrade = upgrades[secondUpgradeIndex];
+        while (secondUpgradeIndex == firstUpgradeIndex || !playerUpgradeManager.CanPerformUpgrade(secondUpgrade))
         {
             secondUpgradeIndex = Random.Range(0, upgrades.Count);
+            secondUpgrade = upgrades[secondUpgradeIndex];
         }
-        firstUpgrade = upgrades[firstUpgradeIndex];
-        secondUpgrade = upgrades[secondUpgradeIndex];
 
         //update button image with upgrade image and text with upgrade text
         button1.image.sprite = firstUpgrade.image;

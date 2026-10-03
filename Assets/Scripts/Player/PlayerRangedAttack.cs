@@ -40,4 +40,9 @@ public class PlayerRangedAttack : MonoBehaviour
     {
         isUnlocked = true;
     }
+
+    public bool IsUnlocked()
+    {
+        return isUnlocked;
+    }
 }
