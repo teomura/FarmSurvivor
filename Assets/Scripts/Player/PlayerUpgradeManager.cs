@@ -24,34 +24,42 @@ public class PlayerUpgradeManager : MonoBehaviour
             case UpgradeType.PrimaryAttackDamage:
                 int increaseDamage = GetComponent<PlayerAttack>().GetSwipeAttack().damage * upgrade.modifier / 100;
                 GetComponent<PlayerAttack>().GetSwipeAttack().IncreaseDamage(increaseDamage);
+                Debug.Log("Get wrecked!");
                 break;
 
             case UpgradeType.PrimaryAttackSpeed:
                 float increaseSpeed = GetComponent<PlayerAttack>().attackSpeed * upgrade.modifier / 100;
-                GetComponent<PlayerAttack>().attackSpeed += increaseSpeed;
+                GetComponent<PlayerAttack>().attackSpeed -= increaseSpeed;
+                Debug.Log("Hit!");
                 break;
 
             case UpgradeType.SecondaryAttackDamage:
+                Debug.Log("Cooked");
                 break;
 
             case UpgradeType.SecondaryAttackSpeed:
                 float increaseAttackSpeed = GetComponent<PlayerRangedAttack>().GetAttackSpeed() * upgrade.modifier / 100;
-                GetComponent<PlayerRangedAttack>().IncreaseSpeed(increaseAttackSpeed);
+                GetComponent<PlayerRangedAttack>().IncreaseSpeed(-increaseAttackSpeed);
+                Debug.Log("Bombs away");
                 break;
 
             case UpgradeType.SecondaryAttackUnlock:
                 GetComponent<PlayerRangedAttack>().Unlock();
+                Debug.Log("Fire");
                 break;
 
             case UpgradeType.Lifesteal:
+                Debug.Log("Got your health");
                 break;
 
             case UpgradeType.MovementSpeed:
                 float movementSpeed = GetComponent<PlayerController>().speed * upgrade.modifier / 100;
                 GetComponent<PlayerController>().speed += movementSpeed;
+                Debug.Log("Flash");
                 break;
 
             case UpgradeType.SlowAura:
+                Debug.Log("Freeze");
                 break;
         }
     }

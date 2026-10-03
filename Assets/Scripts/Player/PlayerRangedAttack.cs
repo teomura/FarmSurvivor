@@ -22,8 +22,6 @@ public class PlayerRangedAttack : MonoBehaviour
             if (isAttacking)
             {
                 attackTimer = 0f;   // reset timer
-
-                Debug.Log("Fire!");
             }
         }
     }
