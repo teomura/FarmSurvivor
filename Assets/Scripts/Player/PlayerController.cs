@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private UnityEvent onLevelUp;
 
     [SerializeField] private UnityEvent onDeath;
-    public InputAction moveAction;
+    private InputAction moveAction;
 
     //public InputAction clickToMove;
     public float speed = 5.0f;
@@ -35,7 +35,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        moveAction.Enable();
+        moveAction = InputSystem.actions.FindAction("Move");
+
         //clickToMove.Enable();
         currentHealth = maxHealth;
         //currentXp = maxXp;
