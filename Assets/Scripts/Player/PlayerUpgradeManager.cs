@@ -49,6 +49,7 @@ public class PlayerUpgradeManager : MonoBehaviour
                 break;
 
             case UpgradeType.Lifesteal:
+                GetComponent<SwipeAttack>().IncreaseLifesteal(upgrade.modifier);
                 Debug.Log("Got your health");
                 break;
 

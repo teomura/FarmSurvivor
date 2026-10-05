@@ -22,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
         {
             attackTimer = 0f;   // reset timer
             swipe.gameObject.SetActive(true);
+            swipe.GetComponent<AudioSource>().Play();
             Debug.Log(attackSpeed);
         }
     }
