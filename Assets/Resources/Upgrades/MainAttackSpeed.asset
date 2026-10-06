@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 3
   modifier: 10
-  image: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  image: {fileID: 6197878904764164440, guid: c73454bee3802a540aab74598ed40d0f, type: 3}
   description: Increase attack speed by {0}%

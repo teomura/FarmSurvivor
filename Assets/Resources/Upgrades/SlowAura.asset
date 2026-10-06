@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 8
   modifier: 10
-  image: {fileID: 1807624531, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  image: {fileID: 4637485588366548789, guid: fccc3f5c52e6e88419ac00495904c3a4, type: 3}
   description: Decreases enemy speed by {0}%

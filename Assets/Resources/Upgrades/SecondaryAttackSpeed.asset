@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 6
   modifier: 10
-  image: {fileID: -537537479, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
+  image: {fileID: 6149006976780133910, guid: 21cee5564273d084bbf0ad204b04daa7, type: 3}
   description: Increase projectile speed by {0}%

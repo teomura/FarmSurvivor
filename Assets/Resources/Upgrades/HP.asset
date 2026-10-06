@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 0
   modifier: 10
-  image: {fileID: 927338625, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  image: {fileID: -5185649437945853404, guid: 1693e2394c9873c4c9ffded93ca7a0bf, type: 3}
   description: Increase max health by {0}%
