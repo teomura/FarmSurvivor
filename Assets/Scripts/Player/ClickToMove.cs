@@ -8,7 +8,7 @@ public class ClickToMove : MonoBehaviour
     private PlayerController _player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         _player = FindAnyObjectByType<PlayerController>();
         if (_player == null)
@@ -18,15 +18,14 @@ public class ClickToMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)// detecting input
         {
             Vector3 mousePosition = GetComponentInChildren<Camera>().ScreenToWorldPoint(Mouse.current.position.ReadValue());//get mouse position
 
             Debug.Log("Floor CLicked");
-            _player.UpdatePosition(mousePosition);//movement logic from player script here        
-
+            _player.UpdatePosition(mousePosition);//movement logic from player script here
         }
     }
 }

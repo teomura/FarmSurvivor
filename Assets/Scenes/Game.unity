@@ -1308,10 +1308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20671e419e4877844b6026cda384e3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRangedAttack
-  isUnlocked: 1
-  attackSpeed: 1
-  projectilePrefab: {fileID: 5019199410035969276, guid: 74023a75a2d65884ebd12fc760cd924a, type: 3}
-  position: {fileID: 644806680}
+  isUnlocked: 0
+  attackSpeed: 3
+  projectilePrefab: {fileID: 2271314791563160529, guid: 74023a75a2d65884ebd12fc760cd924a, type: 3}
+  startPoint: {fileID: 644806680}
+  projectileNumber: 8
 --- !u!114 &644806688
 MonoBehaviour:
   m_ObjectHideFlags: 0

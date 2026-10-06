@@ -62,10 +62,18 @@ public class LevelUpMenu : MonoBehaviour
     public void OnButton1()
     {
         playerUpgradeManager.AddUpgrade(firstUpgrade);
+        if (firstUpgrade.upgradeType == UpgradeType.SecondaryAttackUnlock)
+        {
+            upgrades.Remove(firstUpgrade);
+        }
     }
 
     public void OnButton2()
     {
         playerUpgradeManager.AddUpgrade(secondUpgrade);
+        if (secondUpgrade.upgradeType == UpgradeType.SecondaryAttackUnlock)
+        {
+            upgrades.Remove(secondUpgrade);
+        }
     }
 }

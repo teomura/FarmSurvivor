@@ -4,6 +4,10 @@ public class PlayerRangedAttack : MonoBehaviour
 {
     [SerializeField] private bool isUnlocked = false;
     [SerializeField] private float attackSpeed = 1.0f;
+    [SerializeField] private FireAttack projectilePrefab;
+    [SerializeField] private Transform startPoint;
+    [SerializeField] private int projectileNumber = 8;
+
     private float attackTimer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,8 +25,23 @@ public class PlayerRangedAttack : MonoBehaviour
             //counter to attack start
             if (isAttacking)
             {
-                attackTimer = 0f;   // reset timer
+                Shoot();
+                attackTimer = 0f;// reset timer
             }
+        }
+    }
+
+    public void Shoot()
+    {
+        float angleStep = 360f / projectileNumber;
+        float angle = 0f;
+
+        for (int i = 0; i < projectileNumber; i++)
+        {
+            Vector3 direction = Quaternion.Euler(0, 0, angle) * Vector3.right;
+            FireAttack fireAttack = Instantiate(projectilePrefab, startPoint.position, startPoint.rotation);
+            fireAttack.Launch(direction);
+            angle += angleStep;
         }
     }
 
