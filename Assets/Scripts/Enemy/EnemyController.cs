@@ -7,15 +7,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject expPrefab;
 
     public int maxHealth = 5;
+
     public int health
     { get { return currentHealth; } }
+
     private int currentHealth = 1;
 
     public float speed = 2f;
-    private bool canMove = true;
-
-    private float attackTimer = 0f;
     public float attackSpeed = 2.0f;
+
+    private bool canMove = true;
+    private float attackTimer = 0f;
 
     private void Awake()
     {
@@ -79,6 +81,7 @@ public class EnemyController : MonoBehaviour
         if (currentHealth == 0)
         {
             Instantiate(expPrefab, transform.position, Quaternion.identity);
+            ScoreManager.instance.AddScore();
             Destroy(gameObject);
         }
     }

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         //clickToMove.Enable();
         currentHealth = maxHealth;
         //currentXp = maxXp;
-        levelText.text = "Level 1";
+        levelText.text = "Lv.1";
     }
 
     // Update is called once per frame
@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
     private void LevelUp()
     {
         level = level + 1;//increase lvl
-        levelText.text = "Level " + level.ToString();//change level
+        levelText.text = "Lv." + level.ToString();//change level
         currentXp = 0;//reset bar
         xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
         onLevelUp.Invoke();
