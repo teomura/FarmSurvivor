@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
 
     private bool canMove = true;
     private float attackTimer = 0f;
+    private Vector3 direction;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         GetComponent<SpriteRenderer>().flipX = player.transform.position.x < transform.position.x;
+        direction = player.transform.position - transform.position;
+        direction.Normalize();
 
         if (canMove)
         {
@@ -64,7 +67,14 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        canMove = false; //stopping enemies on collision
+        Vector3 collisionDirection = collision.transform.position - transform.position;
+        collisionDirection.Normalize();
+
+        if (Vector3.Dot(direction, collisionDirection) > 0.95f)
+        {
+            canMove = false; //stopping enemies on collision
+        }
+
         attackTimer = attackSpeed;
     }
 
