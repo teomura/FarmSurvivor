@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -10}
+  m_AnchoredPosition: {x: 0.5, y: 21.3}
   m_SizeDelta: {x: -175.8, y: 46.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &696332334212698828
@@ -331,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5222424122053800916}
   - component: {fileID: 6907468019547009744}
-  - component: {fileID: 8423028384657230385}
+  - component: {fileID: 1657176652869473754}
   m_Layer: 0
   m_Name: DamageArea
   m_TagString: Untagged
@@ -404,7 +404,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1304559308, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8962264, g: 0.7482645, b: 0.8936753, a: 0.74509805}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -414,8 +414,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!61 &8423028384657230385
-BoxCollider2D:
+--- !u!58 &1657176652869473754
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -448,18 +448,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5555556, y: 0.33333334}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.5555556, y: 0.33333334}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.000000007450581}
+  m_Radius: 0.2777778
 --- !u!1 &6678541915355111795
 GameObject:
   m_ObjectHideFlags: 0
