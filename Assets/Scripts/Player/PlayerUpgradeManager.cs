@@ -39,6 +39,8 @@ public class PlayerUpgradeManager : MonoBehaviour
                 break;
 
             case UpgradeType.SecondaryAttackDamage:
+                int increaseRangedAttack = rangedAttack.GetDamage() * upgrade.modifier / 100;
+                rangedAttack.IncreaseDamage(increaseRangedAttack);
                 Debug.Log("Cooked");
                 break;
 

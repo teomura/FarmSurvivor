@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lifesteal
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 7
-  modifier: 10
+  modifier: 1
   image: {fileID: 7123017666264362218, guid: e3ae70d53ddb2f548963467ff9fd6e4f, type: 3}
   description: Increase lifesteal by {0}%

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyType: 0
   requiredLevel: 1
-  hp: 5
-  movementSpeed: 2
+  hp: 50
+  movementSpeed: 1
   attackSpeed: 2
-  damage: 1
+  damage: 10
   attacks: 00000000i

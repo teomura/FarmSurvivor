@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aa06d0751acf8498eb67a17e0bc6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwipeAttack
-  damage: 10
-  lifesteal: 0
+  damage: 100
   timeToLive: 0.3
 --- !u!61 &-6021370008899347847
 BoxCollider2D:

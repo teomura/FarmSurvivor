@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MainAttackDamage
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 2
-  modifier: 10
+  modifier: 5
   image: {fileID: 5949195436240716301, guid: 106a7d1243dbb164986d97b4f32414a3, type: 3}
   description: 'Increase weapon damage by {0}% '
