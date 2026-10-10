@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject expPrefab;
+    [SerializeField] private EnemyType enemyType;
 
     public int maxHealth = 5;
 
@@ -94,5 +95,10 @@ public class EnemyController : MonoBehaviour
             ScoreManager.instance.AddScore();
             Destroy(gameObject);
         }
+    }
+
+    public EnemyType GetEnemyType()
+    {
+        return enemyType;
     }
 }

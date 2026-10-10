@@ -10,6 +10,7 @@ public class EnemyEditor : EditorWindow
     private TextField nameField;
     private IntegerField hpField;
     private IntegerField damageField;
+    private IntegerField requiredLevel;
     private FloatField movementSpeedField;
     private FloatField attackSpeedField;
     private Toggle meleeField;
@@ -39,6 +40,7 @@ public class EnemyEditor : EditorWindow
 
         nameField = new TextField("Enemy Name");
         enemyTypeField = new EnumField("Enemy Type", EnemyType.Zombie);
+        requiredLevel = new IntegerField("Min Player Level");
         hpField = new IntegerField("Hp");
         damageField = new IntegerField("Damage");
         movementSpeedField = new FloatField("Speed");
@@ -56,6 +58,7 @@ public class EnemyEditor : EditorWindow
 
         root.Add(nameField);
         root.Add(enemyTypeField);
+        root.Add(requiredLevel);
 
         root.Add(new Label("Stats")
         {
@@ -86,6 +89,10 @@ public class EnemyEditor : EditorWindow
         {
             statusLabel.text = "Enemy name is required.";
             return;
+        }
+        if (requiredLevel.value <= 0)
+        {
+            statusLabel.text = "Level needs to be greater than 0.";
         }
         if (hpField.value <= 0)
         {
@@ -121,6 +128,7 @@ public class EnemyEditor : EditorWindow
         enemy.attackSpeed = attackSpeedField.value;
         enemy.movementSpeed = movementSpeedField.value;
         enemy.enemyType = (EnemyType)enemyTypeField.value;
+        enemy.requiredLevel = requiredLevel.value;
         if (meleeField.value)
         {
             enemy.attacks.Add(AttackType.Melee);

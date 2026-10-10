@@ -2921,12 +2921,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefabs:
-  - {fileID: 5380905499951599813, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
-  - {fileID: 5469909139437903420, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
-  - {fileID: 1420684524254516931, guid: 197f51546415d814e905c3a6453a7029, type: 3}
-  - {fileID: 1104576504913880551, guid: 10dea184a5e48cc4497e5f92b5f5abca, type: 3}
+  - {fileID: 1719065776431524829, guid: ff5c3b4cdcf07ea4f970742ebfffbe08, type: 3}
+  - {fileID: 2137783022342509107, guid: b5c24ba5bf5adb64db12682d348335bf, type: 3}
+  - {fileID: 5209781284484492601, guid: 197f51546415d814e905c3a6453a7029, type: 3}
+  - {fileID: -3093135957728903019, guid: 10dea184a5e48cc4497e5f92b5f5abca, type: 3}
   spawnRangeX: 35
   spawnRangeY: 35
+  player: {fileID: 644806681}
 --- !u!1 &1286278472
 GameObject:
   m_ObjectHideFlags: 0

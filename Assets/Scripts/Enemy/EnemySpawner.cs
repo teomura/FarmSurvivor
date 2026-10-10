@@ -1,19 +1,37 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
+    public EnemyController[] enemyPrefabs;
 
     [SerializeField] private float spawnRangeX = 40f;
     [SerializeField] private float spawnRangeY = 40f;
+    [SerializeField] private PlayerController player;
 
     private float startDelay = 2f;
     private float spawnInterval = 1.5f;
+    private List<EnemyData> enemyDatas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        bool canSpawnEnemies = false;
+        enemyDatas = Resources.LoadAll("Enemies", typeof(EnemyData)).Cast<EnemyData>().ToList();
+        foreach (EnemyData enemy in enemyDatas)
+        {
+            if (enemy.requiredLevel == 1)
+            {
+                canSpawnEnemies = true;
+                break;
+            }
+        }
+        if (!canSpawnEnemies)
+        {
+            Debug.LogError("No valid enemies to spawn. Need at least one Level 1 enemy.");
+            return;
+        }
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
 
@@ -24,8 +42,17 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnRandomEnemy()
     {
-        int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
-        Instantiate(enemyPrefabs[enemyIndex], spawnPosition, Quaternion.identity);
+        List<EnemyData> validEnemies = enemyDatas.Where(enemyData => enemyData.requiredLevel <= player.GetLevel()).ToList();
+        int enemyIndex = Random.Range(0, validEnemies.Count);
+        EnemyController enemyPrefab = enemyPrefabs.First(prefab => prefab.GetEnemyType() == validEnemies[enemyIndex].enemyType);
+        if (enemyPrefab != null)
+        {
+            Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("Couldn't find prefab for enemy type " + validEnemies[enemyIndex].enemyType);
+        }
     }
 }

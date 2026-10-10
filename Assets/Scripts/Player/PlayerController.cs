@@ -145,4 +145,6 @@ public class PlayerController : MonoBehaviour
         maxHealth += amount;
         healthBar.UpdateHealthBar(health, maxHealth);
     }
+
+    public int GetLevel() => level;
 }

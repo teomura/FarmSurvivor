@@ -20,6 +20,7 @@ public enum AttackType
 public class EnemyData : ScriptableObject
 {
     public EnemyType enemyType;
+    public int requiredLevel;
     public int hp;
     public float movementSpeed;
     public float attackSpeed;
