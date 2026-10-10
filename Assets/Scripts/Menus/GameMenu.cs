@@ -9,7 +9,7 @@ public class GameMenu : MonoBehaviour
 
     public void Start()
     {
-        highscore.SetText("Highscore\n" + ScoreManager.instance.GetHighscore());
+        highscore.SetText("Top Score\n" + ScoreManager.instance.GetHighscore());
     }
 
     public void Play()
