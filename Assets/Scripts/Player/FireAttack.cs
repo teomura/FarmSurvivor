@@ -32,6 +32,11 @@ public class FireAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.isTrigger)
+        {
+            return;
+        }
+
         EnemyController controller = other.GetComponent<EnemyController>();
 
         if (controller != null)

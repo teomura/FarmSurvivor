@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     public float speed = 2f;
     public float attackSpeed = 2.0f;
-
+    private int damage = 1;
     private bool canMove = true;
     private float attackTimer = 0f;
     private Vector3 direction;
@@ -55,15 +55,20 @@ public class EnemyController : MonoBehaviour
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
-        if (player != null)
-        {
-            attackTimer += Time.deltaTime; //counter to attack start
-            if (attackTimer >= attackSpeed)
-            {
-                player.ChangeHealth(-1);
-                attackTimer = 0f;//reset timer
-            }
-        }
+        UpdateAttack(player);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+
+        UpdateAttack(player);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        PrepareAttack(player);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,7 +81,8 @@ public class EnemyController : MonoBehaviour
             canMove = false; //stopping enemies on collision
         }
 
-        attackTimer = attackSpeed;
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        PrepareAttack(player);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -94,6 +100,27 @@ public class EnemyController : MonoBehaviour
             Instantiate(expPrefab, transform.position, Quaternion.identity);
             ScoreManager.instance.AddScore();
             Destroy(gameObject);
+        }
+    }
+
+    private void UpdateAttack(PlayerController player)
+    {
+        if (player != null)
+        {
+            attackTimer += Time.deltaTime; //counter to attack start
+            if (attackTimer >= attackSpeed)
+            {
+                player.ChangeHealth(-damage);
+                attackTimer = 0f;//reset timer
+            }
+        }
+    }
+
+    private void PrepareAttack(PlayerController player)
+    {
+        if (player != null)
+        {
+            attackTimer = attackSpeed;
         }
     }
 
