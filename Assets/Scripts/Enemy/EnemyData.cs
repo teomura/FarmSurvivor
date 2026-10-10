@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public enum EnemyType
 {
@@ -23,5 +24,5 @@ public class EnemyData : ScriptableObject
     public float movementSpeed;
     public float attackSpeed;
     public int damage;
-    public AttackType[] attacks;
+    public List<AttackType> attacks = new();
 }
