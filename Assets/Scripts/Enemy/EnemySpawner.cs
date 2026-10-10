@@ -44,11 +44,12 @@ public class EnemySpawner : MonoBehaviour
     {
         List<EnemyData> validEnemies = enemyDatas.Where(enemyData => enemyData.requiredLevel <= player.GetLevel()).ToList();
         int enemyIndex = Random.Range(0, validEnemies.Count);
-        EnemyController enemyPrefab = enemyPrefabs.First(prefab => prefab.GetEnemyType() == validEnemies[enemyIndex].enemyType);
+        EnemyController enemyPrefab = enemyPrefabs.First(prefab => prefab.GetEnemyType() == validEnemies[enemyIndex].enemyType);//get matching prefab depending on type
         if (enemyPrefab != null)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            EnemyController spawnedEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            spawnedEnemy.GetComponent<EnemyDataManager>().UpdateFromData(validEnemies[enemyIndex]); // set matching enemy data
         }
         else
         {

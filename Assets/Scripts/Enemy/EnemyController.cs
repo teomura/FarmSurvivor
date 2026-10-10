@@ -128,4 +128,14 @@ public class EnemyController : MonoBehaviour
     {
         return enemyType;
     }
+
+    public void SetDamage(int newValue)
+    {
+        damage = newValue;
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
 }
