@@ -121,6 +121,18 @@ public class EnemyEditor : EditorWindow
         enemy.attackSpeed = attackSpeedField.value;
         enemy.movementSpeed = movementSpeedField.value;
         enemy.enemyType = (EnemyType)enemyTypeField.value;
+        if (meleeField.value)
+        {
+            enemy.attacks.Add(AttackType.Melee);
+        }
+        if (rangeField.value)
+        {
+            enemy.attacks.Add(AttackType.Ranged);
+        }
+        if (aoeField.value)
+        {
+            enemy.attacks.Add(AttackType.AOE);
+        }
 
         string safeName = string.Join("_", nameField.value.Split(Path.GetInvalidFileNameChars()));
         string path = AssetDatabase.GenerateUniqueAssetPath($"{ResourcesPath}/{safeName}.asset");
