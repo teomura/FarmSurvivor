@@ -1446,7 +1446,7 @@ MonoBehaviour:
         m_CallState: 2
   speed: 5
   maxHealth: 50
-  maxXp: 3
+  maxXp: 5
   _destination: {x: 0, y: 0, z: 0}
 --- !u!114 &644806682
 MonoBehaviour:
