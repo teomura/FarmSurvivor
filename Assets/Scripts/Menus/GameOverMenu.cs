@@ -34,11 +34,13 @@ public class GameOverMenu : MonoBehaviour
 
     public void Restart()
     {
+        Hide();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Return()
     {
+        Hide();
         SceneManager.LoadScene("MainMenu");
     }
 }

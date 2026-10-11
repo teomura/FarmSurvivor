@@ -20,6 +20,11 @@ public class InGameUI : MonoBehaviour
 
     private void OnPause(InputAction.CallbackContext context)
     {
+        if (!optionsMenu)
+        {
+            return;
+        }
+
         if (optionsMenu.isActiveAndEnabled)
         {
             optionsMenu.Hide();

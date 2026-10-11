@@ -19,6 +19,7 @@ public class GameMenu : MonoBehaviour
 
     public void Play()
     {
+        closeAction.started -= OnClose;
         SceneManager.LoadScene(gameSceneName);
     }
 
