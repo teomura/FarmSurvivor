@@ -3,8 +3,10 @@ using UnityEngine;
 public class EnemyDataManager : MonoBehaviour
 {
     [SerializeField] private EnemyController enemyController;
-    [SerializeField] private GameObject rangedAttack;
+    [SerializeField] private EnemyRangedAttack rangedAttack;
     [SerializeField] private GameObject aoeAttack;
+
+
 
     public void UpdateFromData(EnemyData data)
     {
@@ -15,7 +17,7 @@ public class EnemyDataManager : MonoBehaviour
 
         if (rangedAttack != null)
         {
-            rangedAttack.SetActive(data.attacks.Contains(AttackType.Ranged));
+            rangedAttack.enabled = data.attacks.Contains(AttackType.Ranged);
         }
         if (aoeAttack != null)
         {

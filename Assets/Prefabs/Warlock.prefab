@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warlock
       objectReference: {fileID: 0}
+    - target: {fileID: 6972085964470282517, guid: e4fa93747639a3c49b33241085a48e73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9124165571921908258, guid: e4fa93747639a3c49b33241085a48e73, type: 3}
       propertyPath: m_Controller
       value: 

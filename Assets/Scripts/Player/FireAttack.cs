@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class FireAttack : MonoBehaviour
 {
+    [SerializeField] private bool isPlayerProjectile;
     public int damage = 10;
     public int speed = 10;
     public float timeToLive = 3f;
 
-    private int lifesteal = 0;
-
     private Rigidbody2D rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Launch(Vector3 direction)
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,14 +34,25 @@ public class FireAttack : MonoBehaviour
         {
             return;
         }
-
-        EnemyController controller = other.GetComponent<EnemyController>();
-
-        if (controller != null)
+        if (isPlayerProjectile)
         {
-            controller.ChangeHealth(-damage);
-            //GetComponentInParent<PlayerController>().ChangeHealth(lifesteal);
-            Destroy(gameObject);
+            EnemyController controller = other.GetComponent<EnemyController>();
+
+            if (controller != null)
+            {
+                controller.ChangeHealth(-damage);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            PlayerController controller = other.GetComponent<PlayerController>();
+
+            if (controller != null)
+            {
+                controller.ChangeHealth(-damage);
+                Destroy(gameObject);
+            }
         }
     }
 }

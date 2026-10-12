@@ -124,6 +124,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public Vector3 GetDirection()
+    {
+        return direction;
+    }
+
     public EnemyType GetEnemyType()
     {
         return enemyType;

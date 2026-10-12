@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 9124165571921908258}
   - component: {fileID: 7765420404602866069}
   - component: {fileID: 8691733507602744132}
+  - component: {fileID: 6972085964470282517}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -474,7 +475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataManager
   enemyController: {fileID: 1719065776431524829}
-  rangedAttack: {fileID: 0}
+  rangedAttack: {fileID: 6972085964470282517}
   aoeAttack: {fileID: 2629870051919378607}
 --- !u!95 &9124165571921908258
 Animator:
@@ -571,6 +572,21 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6972085964470282517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5380905499951599813}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c16018f0b3261544abddde3f87e5d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRangedAttack
+  attackSpeed: 1
+  projectilePrefab: {fileID: 2271314791563160529, guid: 91d9c02dd1a5ca341be885b828e4ddfc, type: 3}
+  startPoint: {fileID: 2028180151138089715}
 --- !u!1 &6838307882711637869
 GameObject:
   m_ObjectHideFlags: 0
