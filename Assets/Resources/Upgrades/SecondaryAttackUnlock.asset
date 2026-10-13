@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 4
   modifier: 1
-  image: {fileID: -2022268893501099586, guid: 3d287dbacd8eac74dbc7dfb1a75bec01, type: 3}
-  description: Unlock fire attack
+  image: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  description: Unlock flying shovels

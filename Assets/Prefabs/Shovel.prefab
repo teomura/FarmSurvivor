@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   isPlayerProjectile: 1
+  rotationSpeed: 540
   damage: 100
   speed: 10
   timeToLive: 0.5

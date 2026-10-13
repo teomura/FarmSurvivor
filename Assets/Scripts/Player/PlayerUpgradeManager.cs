@@ -65,10 +65,6 @@ public class PlayerUpgradeManager : MonoBehaviour
                 playerController.speed += movementSpeed;
                 Debug.Log("Flash");
                 break;
-
-            case UpgradeType.SlowAura:
-                Debug.Log("Freeze");
-                break;
         }
     }
 

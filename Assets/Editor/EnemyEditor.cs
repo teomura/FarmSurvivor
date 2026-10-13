@@ -13,7 +13,6 @@ public class EnemyEditor : EditorWindow
     private IntegerField requiredLevel;
     private FloatField movementSpeedField;
     private FloatField attackSpeedField;
-    private Toggle meleeField;
     private Toggle rangeField;
     private Toggle aoeField;
     private EnumField enemyTypeField;
@@ -45,7 +44,6 @@ public class EnemyEditor : EditorWindow
         damageField = new IntegerField("Damage");
         movementSpeedField = new FloatField("Speed");
         attackSpeedField = new FloatField("Attack Speed");
-        meleeField = new Toggle("Melee Attack");
         rangeField = new Toggle("Ranged Attack");
         aoeField = new Toggle("AOE Attack");
 
@@ -75,7 +73,6 @@ public class EnemyEditor : EditorWindow
             style = { marginBottom = 6, marginTop = 12 }
         });
 
-        root.Add(meleeField);
         root.Add(rangeField);
         root.Add(aoeField);
         root.Add(createButton);
@@ -114,12 +111,6 @@ public class EnemyEditor : EditorWindow
             statusLabel.text = "Movement speed needs to be greater than 0.";
             return;
         }
-
-        if (meleeField.value == false && rangeField.value == false && aoeField.value == false)
-        {
-            statusLabel.text = "Must have at least one attack field.";
-            return;
-        }
         Directory.CreateDirectory(ResourcesPath);
 
         var enemy = ScriptableObject.CreateInstance<EnemyData>();
@@ -129,10 +120,6 @@ public class EnemyEditor : EditorWindow
         enemy.movementSpeed = movementSpeedField.value;
         enemy.enemyType = (EnemyType)enemyTypeField.value;
         enemy.requiredLevel = requiredLevel.value;
-        if (meleeField.value)
-        {
-            enemy.attacks.Add(AttackType.Melee);
-        }
         if (rangeField.value)
         {
             enemy.attacks.Add(AttackType.Ranged);

@@ -13,7 +13,6 @@ public enum UpgradeType
     SecondaryAttackSpeed,
 
     Lifesteal,
-    SlowAura,
 }
 
 [CreateAssetMenu(fileName = "Upgrade", menuName = "Upgrades/New Upgrade", order = 1)]

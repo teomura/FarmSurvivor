@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   upgradeType: 5
   modifier: 2
-  image: {fileID: 7552910964111462805, guid: a832b85aea96e9145b0957deee6d6eb5, type: 3}
-  description: Increase fire damage by {0}%
+  image: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  description: Increase shovel damage by {0}%
