@@ -7,6 +7,7 @@ public class OptionsMenu : MonoBehaviour
 {
     [SerializeField] private Slider firstSlider;
     [SerializeField] private AudioMixer audioMixer;
+    private bool audioFilterPreviouslyEnabled;
 
     public void SetMasterVolume(float level)
     {
@@ -27,6 +28,8 @@ public class OptionsMenu : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+        audioFilterPreviouslyEnabled = GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = true;
 
         EventSystem.current.SetSelectedGameObject(firstSlider.gameObject);
     }
@@ -35,5 +38,6 @@ public class OptionsMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 1.0f;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = audioFilterPreviouslyEnabled;
     }
 }

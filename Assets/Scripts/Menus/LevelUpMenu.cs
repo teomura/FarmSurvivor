@@ -30,6 +30,7 @@ public class LevelUpMenu : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = true;
 
         int firstUpgradeIndex = Random.Range(0, upgrades.Count);
         firstUpgrade = upgrades[firstUpgradeIndex];
@@ -59,6 +60,7 @@ public class LevelUpMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 1f;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = false;
     }
 
     public void OnButton1()

@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 155020463}
   - component: {fileID: 155020465}
   - component: {fileID: 155020464}
-  - component: {fileID: 155020466}
   m_Layer: 5
   m_Name: Zombie
   m_TagString: Untagged
@@ -195,23 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155020462}
   m_CullTransparentMesh: 1
---- !u!111 &155020466
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155020462}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: e3e204a688db68243bbf328a04fc932c, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e3e204a688db68243bbf328a04fc932c, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &508297665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442704407}
   - component: {fileID: 1442704408}
+  - component: {fileID: 1442704409}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1190,10 +1173,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameMenu
   gameSceneName: Game
   button1: {fileID: 1338685605}
-  button2: {fileID: 1942475628}
-  button3: {fileID: 1399589265}
   highscore: {fileID: 508297667}
   optionsMenu: {fileID: 800469766}
+--- !u!95 &1442704409
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442704406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03959621f3362bd4f942aa118bfc0916, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1467183682
 GameObject:
   m_ObjectHideFlags: 0

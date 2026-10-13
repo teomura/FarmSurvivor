@@ -14,6 +14,7 @@ public class GameOverMenu : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = true;
         score.SetText("Score: " + ScoreManager.instance.GetScore());
         ScoreManager.instance.UpdateHighscore();
         highscore.SetText("Highscore: " + ScoreManager.instance.GetHighscore());
@@ -30,6 +31,7 @@ public class GameOverMenu : MonoBehaviour
     public void Restart()
     {
         Hide();
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

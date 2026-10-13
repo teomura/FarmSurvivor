@@ -21,11 +21,13 @@ public class GameMenu : MonoBehaviour
         highscore.SetText("Top Score\n" + ScoreManager.instance.GetHighscore());
         closeAction = InputSystem.actions.FindAction("Cancel");
         closeAction.started += OnClose;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = true;
     }
 
     public void Play()
     {
         closeAction.started -= OnClose;
+        GameObject.FindAnyObjectByType<AudioLowPassFilter>().enabled = false;
         SceneManager.LoadScene(gameSceneName);
     }
 
