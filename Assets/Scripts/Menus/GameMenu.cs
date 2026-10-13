@@ -16,7 +16,7 @@ public class GameMenu : MonoBehaviour
 
     public void Start()
     {
-        EventSystem.current.SetSelectedGameObject(button1.gameObject);
+        SelectButton();
 
         highscore.SetText("Top Score\n" + ScoreManager.instance.GetHighscore());
         closeAction = InputSystem.actions.FindAction("Cancel");
@@ -47,5 +47,10 @@ public class GameMenu : MonoBehaviour
         {
             optionsMenu.Hide();
         }
+    }
+
+    public void SelectButton()
+    {
+        EventSystem.current.SetSelectedGameObject(button1.gameObject);
     }
 }

@@ -933,7 +933,7 @@
                 {
                     "name": "",
                     "id": "a1037407-a361-41a1-9995-b4d1f4cb2c3d",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
