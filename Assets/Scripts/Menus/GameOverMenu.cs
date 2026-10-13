@@ -1,21 +1,14 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] private TextMeshProUGUI highscore;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-    }
+    [SerializeField] private Button button1;
 
     public void Show()
     {
@@ -24,6 +17,8 @@ public class GameOverMenu : MonoBehaviour
         score.SetText("Score: " + ScoreManager.instance.GetScore());
         ScoreManager.instance.UpdateHighscore();
         highscore.SetText("Highscore: " + ScoreManager.instance.GetHighscore());
+
+        EventSystem.current.SetSelectedGameObject(button1.gameObject);
     }
 
     public void Hide()

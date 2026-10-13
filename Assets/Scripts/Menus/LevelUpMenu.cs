@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LevelUpMenu : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class LevelUpMenu : MonoBehaviour
     [SerializeField] private Button button2;
     [SerializeField] private TextMeshProUGUI text1;
     [SerializeField] private TextMeshProUGUI text2;
-
     private Upgrade firstUpgrade;
     private Upgrade secondUpgrade;
     private List<Upgrade> upgrades;
@@ -51,6 +51,8 @@ public class LevelUpMenu : MonoBehaviour
         button2.image.sprite = secondUpgrade.image;
         text1.text = string.Format(firstUpgrade.description, firstUpgrade.modifier);
         text2.text = string.Format(secondUpgrade.description, secondUpgrade.modifier);
+
+        EventSystem.current.SetSelectedGameObject(button1.gameObject);
     }
 
     public void Hide()
