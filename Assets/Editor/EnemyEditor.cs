@@ -17,6 +17,7 @@ public class EnemyEditor : EditorWindow
     private Toggle aoeField;
     private EnumField enemyTypeField;
     private Label statusLabel;
+    private IntegerField hpDropChance;
 
     [MenuItem("FarmSurvivor/Enemy Creator")]
     private static void Open()
@@ -46,6 +47,7 @@ public class EnemyEditor : EditorWindow
         attackSpeedField = new FloatField("Attack Speed");
         rangeField = new Toggle("Ranged Attack");
         aoeField = new Toggle("AOE Attack");
+        hpDropChance = new IntegerField("Hp Drop Chance");
 
         var createButton = new Button(CreateAsset) { text = "Create" };
         createButton.style.marginTop = 8;
@@ -67,6 +69,7 @@ public class EnemyEditor : EditorWindow
         root.Add(damageField);
         root.Add(attackSpeedField);
         root.Add(movementSpeedField);
+        root.Add(hpDropChance);
 
         root.Add(new Label("Attacks")
         {
@@ -111,6 +114,11 @@ public class EnemyEditor : EditorWindow
             statusLabel.text = "Movement speed needs to be greater than 0.";
             return;
         }
+        if (hpDropChance.value < 0 || hpDropChance.value > 100)
+        {
+            statusLabel.text = "Drop chance must be between 0 and 100.";
+            return;
+        }
         Directory.CreateDirectory(ResourcesPath);
 
         var enemy = ScriptableObject.CreateInstance<EnemyData>();
@@ -120,6 +128,7 @@ public class EnemyEditor : EditorWindow
         enemy.movementSpeed = movementSpeedField.value;
         enemy.enemyType = (EnemyType)enemyTypeField.value;
         enemy.requiredLevel = requiredLevel.value;
+        enemy.hpDropChance = hpDropChance.value;
         if (rangeField.value)
         {
             enemy.attacks.Add(AttackType.Ranged);

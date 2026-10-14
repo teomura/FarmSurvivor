@@ -5,7 +5,9 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject expPrefab;
+    [SerializeField] private GameObject hpPrefab;
     [SerializeField] private EnemyType enemyType;
+    [Range(0, 100)][SerializeField] private int hpDropChance;
 
     public int maxHealth = 5;
 
@@ -97,7 +99,11 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            Instantiate(expPrefab, transform.position, Quaternion.identity);
+            Instantiate(expPrefab, transform.position - Vector3.up * 0.5f, Quaternion.identity);
+            if (Random.Range(1, 100) < hpDropChance)
+            {
+                Instantiate(hpPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);//offset drop
+            }
             ScoreManager.instance.AddScore();
             Destroy(gameObject);
         }
@@ -142,5 +148,10 @@ public class EnemyController : MonoBehaviour
     public int GetDamage()
     {
         return damage;
+    }
+
+    public void SetHpDropChance(int newDropChance)
+    {
+        hpDropChance = newDropChance;
     }
 }

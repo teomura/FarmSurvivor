@@ -22,6 +22,7 @@ public class EnemyData : ScriptableObject
     public EnemyType enemyType;
     public int requiredLevel;
     public int hp;
+    public int hpDropChance;
     public float movementSpeed;
     public float attackSpeed;
     public int damage;

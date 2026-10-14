@@ -6,14 +6,13 @@ public class EnemyDataManager : MonoBehaviour
     [SerializeField] private EnemyRangedAttack rangedAttack;
     [SerializeField] private GameObject aoeAttack;
 
-
-
     public void UpdateFromData(EnemyData data)
     {
         enemyController.maxHealth = data.hp;
         enemyController.speed = data.movementSpeed;
         enemyController.attackSpeed = data.attackSpeed;
         enemyController.SetDamage(data.damage);
+        enemyController.SetHpDropChance(data.hpDropChance);
 
         if (rangedAttack != null)
         {
