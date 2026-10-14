@@ -17,5 +17,5 @@ MonoBehaviour:
   hp: 300
   movementSpeed: 1
   attackSpeed: 2
-  damage: 100
+  damage: 50
   attacks: 0000000002000000i

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85caee45f0d2cdf4a89df1a97e58f12e, type: 3}
-  m_Name: Schelet
+  m_Name: Skeleton
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyType: 1
   requiredLevel: 1
