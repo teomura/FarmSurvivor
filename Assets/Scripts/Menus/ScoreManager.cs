@@ -26,14 +26,14 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.SetText("Score " + score);
+            scoreText.SetText(" " + score);
         }
     }
 
     public void AddScore()
     {
         score++;
-        scoreText.SetText("Score " + score);
+        scoreText.SetText(" " + score);
     }
 
     public int GetScore() => score;

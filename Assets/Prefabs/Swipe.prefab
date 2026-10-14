@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aa06d0751acf8498eb67a17e0bc6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwipeAttack
-  damage: 100
+  damage: 50
   timeToLive: 0.3
 --- !u!61 &-6021370008899347847
 BoxCollider2D:
@@ -82,7 +82,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08319263, y: -0.11064613}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -92,7 +92,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1663848, y: 0.889354}
   m_EdgeRadius: 0
 --- !u!82 &5046667224093676728
 AudioSource:

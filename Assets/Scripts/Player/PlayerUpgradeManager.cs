@@ -29,41 +29,41 @@ public class PlayerUpgradeManager : MonoBehaviour
             case UpgradeType.PrimaryAttackDamage:
                 int increaseDamage = playerAttack.GetSwipeAttack().damage * upgrade.modifier / 100;
                 playerAttack.GetSwipeAttack().IncreaseDamage(increaseDamage);
-                Debug.Log("Get wrecked!");
+
                 break;
 
             case UpgradeType.PrimaryAttackSpeed:
                 float increaseSpeed = playerAttack.attackSpeed * upgrade.modifier / 100;
                 playerAttack.attackSpeed -= increaseSpeed;
-                Debug.Log("Hit!");
+
                 break;
 
             case UpgradeType.SecondaryAttackDamage:
                 int increaseRangedAttack = rangedAttack.GetDamage() * upgrade.modifier / 100;
                 rangedAttack.IncreaseDamage(increaseRangedAttack);
-                Debug.Log("Cooked");
+
                 break;
 
             case UpgradeType.SecondaryAttackSpeed:
                 float increaseAttackSpeed = rangedAttack.GetAttackSpeed() * upgrade.modifier / 100;
                 rangedAttack.IncreaseSpeed(-increaseAttackSpeed);
-                Debug.Log("Bombs away");
+
                 break;
 
             case UpgradeType.SecondaryAttackUnlock:
                 rangedAttack.Unlock();
-                Debug.Log("Fire");
+
                 break;
 
             case UpgradeType.Lifesteal:
                 swipeAttack.IncreaseLifesteal(upgrade.modifier);
-                Debug.Log("Got your health");
+
                 break;
 
             case UpgradeType.MovementSpeed:
                 float movementSpeed = playerController.speed * upgrade.modifier / 100;
                 playerController.speed += movementSpeed;
-                Debug.Log("Flash");
+
                 break;
         }
     }
