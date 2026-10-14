@@ -10,6 +10,7 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     private bool audioFilterPreviouslyEnabled;
     private InputAction onCancel;
+    private int openedFrame;
 
     private void Awake()
     {
@@ -40,7 +41,8 @@ public class OptionsMenu : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(firstSlider.gameObject);
         onCancel.performed += OnCancel;
-    }
+        openedFrame = Time.frameCount;
+}
 
     public void Hide()
     {
@@ -58,6 +60,9 @@ public class OptionsMenu : MonoBehaviour
 
     private void OnCancel(InputAction.CallbackContext context)
     {
-        Hide();
+        if (openedFrame != Time.frameCount)
+        {
+            Hide();
+        }
     }
 }

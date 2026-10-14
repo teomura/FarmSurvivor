@@ -43,7 +43,7 @@ public class GameMenu : MonoBehaviour
 
     private void OnClose(InputAction.CallbackContext context)
     {
-        if (optionsMenu.isActiveAndEnabled)
+        if (optionsMenu != null && optionsMenu.isActiveAndEnabled)
         {
             optionsMenu.Hide();
         }

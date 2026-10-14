@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
     private void LevelUp()
     {
         level = level + 1;//increase lvl
-        levelText.text = "Lv." + level.ToString();//change level
+        levelText.text = "   " + level.ToString();//change level
         currentXp = 0;//reset bar
         maxXp = (int)(maxXp * 1.2f);
         xpBar.UpdateHealthBar(currentXp, maxXp); //refresh xpbar
