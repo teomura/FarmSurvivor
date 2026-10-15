@@ -11,10 +11,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private int distance;
 
-    private float startDelay = 3f;
-    private float spawnNormal = 2f;
-    private float spawnMedium = 1.5f;
-    private float spawnHard = 1.0f;
+    [SerializeField] private float startDelay = 0f;
+    [SerializeField] private float spawnNormal = 2f;
+    [SerializeField] private float spawnMedium = 1.5f;
+    [SerializeField] private float spawnHard = 1.0f;
+    [SerializeField] private int initialEnemies = 0;
+    [SerializeField] private EnemyData initialEnemyData;
+    [SerializeField] private float initialSpawnDistance;
+
     private float timer;
     private List<EnemyData> enemyDatas;
 
@@ -38,7 +42,6 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("No valid enemies to spawn. Need at least one Level 1 enemy.");
             return;
         }
-        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnNormal);
     }
 
     // Update is called once per frame
@@ -56,7 +59,15 @@ public class EnemySpawner : MonoBehaviour
                 timer = spawnHard;
             }
 
-            SpawnRandomEnemy();
+            if (initialEnemies > 0)
+            {
+                SpawnInitialEnemy();
+                initialEnemies--;
+            }
+            else
+            {
+                SpawnRandomEnemy();
+            }
             timer = spawnNormal;
         }
     }
@@ -68,20 +79,33 @@ public class EnemySpawner : MonoBehaviour
         EnemyController enemyPrefab = enemyPrefabs.First(prefab => prefab.GetEnemyType() == validEnemies[enemyIndex].enemyType);//get matching prefab depending on type
         if (enemyPrefab != null)
         {
-            Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
-            EnemyController spawnedEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            Vector3 spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+            while (Vector3.Distance(spawnLocation, player.gameObject.transform.position) < distance)
+            {
+                spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+            }
+            EnemyController spawnedEnemy = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
             spawnedEnemy.GetComponent<EnemyDataManager>().UpdateFromData(validEnemies[enemyIndex]); // set matching enemy data
         }
         else
         {
             Debug.LogError("Couldn't find prefab for enemy type " + validEnemies[enemyIndex].enemyType);
         }
+    }
 
-        Vector3 spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
-        while (Vector3.Distance(spawnLocation, player.gameObject.transform.position) < distance)
+    private void SpawnInitialEnemy()
+    {
+        EnemyController enemyPrefab = enemyPrefabs.First(prefab => prefab.GetEnemyType() == initialEnemyData.enemyType);
+        if (enemyPrefab != null)
         {
-            spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+            Vector3 playerPosition = player.gameObject.transform.position;
+            Vector3 spawnLocation = playerPosition + Quaternion.Euler(0, 0, Random.Range(270, 360)) * Vector3.right * initialSpawnDistance;
+            EnemyController spawnedEnemy = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+            spawnedEnemy.GetComponent<EnemyDataManager>().UpdateFromData(initialEnemyData); // set matching enemy data
         }
-        EnemyController spawn = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+        else
+        {
+            Debug.LogError("Couldn't find prefab for enemy type " + initialEnemyData.enemyType);
+        }
     }
 }
