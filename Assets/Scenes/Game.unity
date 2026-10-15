@@ -2699,6 +2699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swipe
       objectReference: {fileID: 0}
+    - target: {fileID: 8848415594707899022, guid: c7d999b3aeda27946aeb350f3b690567, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4875,6 +4879,7 @@ MonoBehaviour:
   spawnRangeX: 32
   spawnRangeY: 32
   player: {fileID: 644806681}
+  distance: 15
 --- !u!1 &1253891727
 GameObject:
   m_ObjectHideFlags: 0

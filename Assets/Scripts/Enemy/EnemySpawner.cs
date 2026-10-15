@@ -11,13 +11,18 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private PlayerController player;
     [SerializeField] private int distance;
 
-    private float startDelay = 2f;
-    private float spawnInterval = 1.5f;
+    private float startDelay = 3f;
+    private float spawnNormal = 2f;
+    private float spawnMedium = 1.5f;
+    private float spawnHard = 1.0f;
+    private float timer;
     private List<EnemyData> enemyDatas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        timer = startDelay;
+
         bool canSpawnEnemies = false;
         enemyDatas = Resources.LoadAll("Enemies", typeof(EnemyData)).Cast<EnemyData>().ToList();
         foreach (EnemyData enemy in enemyDatas)
@@ -33,12 +38,27 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("No valid enemies to spawn. Need at least one Level 1 enemy.");
             return;
         }
-        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnNormal);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            if (player.GetLevel() > 20)
+            {
+                timer = spawnMedium;
+            }
+            else if (player.GetLevel() > 10)
+            {
+                timer = spawnHard;
+            }
+
+            SpawnRandomEnemy();
+            timer = spawnNormal;
+        }
     }
 
     private void SpawnRandomEnemy()
