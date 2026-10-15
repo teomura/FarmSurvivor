@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Skeleton
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyType: 1
-  requiredLevel: 1
+  requiredLevel: 2
   hp: 50
+  hpDropChance: 1
   movementSpeed: 3
   attackSpeed: 2
   damage: 20
