@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnRangeX = 40f;
     [SerializeField] private float spawnRangeY = 40f;
     [SerializeField] private PlayerController player;
+    [SerializeField] private int distance;
 
     private float startDelay = 2f;
     private float spawnInterval = 1.5f;
@@ -55,5 +56,12 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.LogError("Couldn't find prefab for enemy type " + validEnemies[enemyIndex].enemyType);
         }
+
+        Vector3 spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+        while (Vector3.Distance(spawnLocation, player.gameObject.transform.position) < distance)
+        {
+            spawnLocation = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+        }
+        EnemyController spawn = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
     }
 }
