@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,10 +46,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //Mouse
-        var distance = Vector3.Distance(_destination, transform.position);
-
-        //Keyboard
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
         if (moveInput.magnitude != 0)
@@ -71,39 +66,12 @@ public class PlayerController : MonoBehaviour
             }
 
             GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
-            _destination = transform.position;
-        }
-        else if (distance > 0.1f)
-        {
-            //direction = destination - source (math formula for direction)
-            var direction = _destination - transform.position;
-            direction.Normalize();//to avoid extralong vector - this normalizes it to 1
-
-            if (direction.x < 0)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else
-            {
-                transform.localScale = Vector3.one;
-            }
-            transform.Translate(direction * speed * Time.deltaTime);//movement
-            GetComponent<Animator>().SetBool("isMoving", true);
         }
         else
         {
             GetComponent<Animator>().SetBool("isMoving", false);
         }
     }
-
-    public void UpdatePosition(Vector3 pos)
-    {
-        _destination = pos;
-        _destination.z = transform.position.z;
-    }
-
-    [SerializeField]
-    private Vector3 _destination;        //stores the updated target position of the player
 
     // FixedUpdate has the same call rate as the physics system
     private void FixedUpdate()
