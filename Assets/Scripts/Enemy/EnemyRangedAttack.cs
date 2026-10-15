@@ -32,4 +32,9 @@ public class EnemyRangedAttack : MonoBehaviour
 
         fireAttack.damage = GetComponent<EnemyController>().GetDamage();
     }
+
+    public void SetAttackSpeed(float amount)
+    {
+        attackSpeed = amount;
+    }
 }

@@ -43,7 +43,6 @@ public class SwipeAttack : MonoBehaviour
     public void IncreaseDamage(int amount)
     {
         damage += amount;
-        Debug.Log(damage);
     }
 
     public void IncreaseLifesteal(int amount)

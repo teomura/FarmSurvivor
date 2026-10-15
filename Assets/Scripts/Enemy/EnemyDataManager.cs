@@ -11,6 +11,7 @@ public class EnemyDataManager : MonoBehaviour
         enemyController.maxHealth = data.hp;
         enemyController.speed = data.movementSpeed;
         enemyController.attackSpeed = data.attackSpeed;
+        rangedAttack.SetAttackSpeed(data.attackSpeed);
         enemyController.SetDamage(data.damage);
         enemyController.SetHpDropChance(data.hpDropChance);
 
