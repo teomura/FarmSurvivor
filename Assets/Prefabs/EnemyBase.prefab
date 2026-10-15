@@ -462,7 +462,7 @@ MonoBehaviour:
   enemyType: 0
   hpDropChance: 0
   maxHealth: 10
-  speed: 2
+  speed: 1
   attackSpeed: 2
 --- !u!114 &-6692355179625248517
 MonoBehaviour:

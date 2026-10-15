@@ -15,7 +15,8 @@ MonoBehaviour:
   enemyType: 3
   requiredLevel: 10
   hp: 300
+  hpDropChance: 20
   movementSpeed: 1
   attackSpeed: 2
-  damage: 50
+  damage: 30
   attacks: 0000000002000000i

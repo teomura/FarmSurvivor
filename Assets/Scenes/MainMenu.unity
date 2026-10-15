@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.990566, g: 0.97654855, b: 0.97654855, a: 1}
-    m_HighlightedColor: {r: 0.1254902, g: 0.36078432, b: 0.36078432, a: 1}
+    m_HighlightedColor: {r: 0.09803922, g: 0.8, b: 0.8980392, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.097232126, g: 0.7998554, b: 0.8962264, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.1254902, g: 0.36078432, b: 0.36078432, a: 1}
+    m_HighlightedColor: {r: 0.09803922, g: 0.8, b: 0.8980392, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.09803922, g: 0.8, b: 0.8980392, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1700,7 +1700,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.1254902, g: 0.36078432, b: 0.36078432, a: 1}
+    m_HighlightedColor: {r: 0.09803922, g: 0.8, b: 0.8980392, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.09803922, g: 0.8, b: 0.8980392, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2075,41 +2075,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1954465437}
     m_Modifications:
-    - target: {fileID: 180383296032106420, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 180383296032106420, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5941496774645571516, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
       propertyPath: m_Name
       value: Pause/Options Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941496774645571516, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6849843374550661933, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6849843374550661933, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6977926230335296422, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6977926230335296422, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6977926230335296422, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7485763803256882130, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
       propertyPath: m_Pivot.x
@@ -2190,18 +2158,6 @@ PrefabInstance:
     - target: {fileID: 7485763803256882130, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937118461363472073, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937118461363472073, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8937118461363472073, guid: eab0f0455db4483488ec6fe76348d0c4, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
