@@ -37,9 +37,8 @@ public class PlayerController : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
 
-        //clickToMove.Enable();
         currentHealth = maxHealth;
-        //currentXp = maxXp;
+
         levelText.text = "Lv.1";
     }
 
@@ -48,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        if (moveInput.magnitude != 0)
+        if (moveInput != Vector2.zero)
         {
             transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
             transform.Translate(Vector3.up * moveInput.y * Time.deltaTime * speed);
@@ -64,18 +63,8 @@ public class PlayerController : MonoBehaviour
                     transform.localScale = Vector3.one;
                 }
             }
-
-            GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
         }
-        else
-        {
-            GetComponent<Animator>().SetBool("isMoving", false);
-        }
-    }
-
-    // FixedUpdate has the same call rate as the physics system
-    private void FixedUpdate()
-    {
+        GetComponent<Animator>().SetBool("isMoving", moveInput != Vector2.zero);
     }
 
     public void ChangeHealth(int amount)
