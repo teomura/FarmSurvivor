@@ -5845,11 +5845,11 @@ MonoBehaviour:
   spawnRangeX: 32
   spawnRangeY: 32
   player: {fileID: 644806681}
-  distance: 15
+  distance: 10
   startDelay: 0
   spawnNormal: 1.5
-  spawnMedium: 1.25
-  spawnHard: 1
+  spawnMedium: 1.35
+  spawnHard: 1.5
   initialEnemies: 15
   initialEnemyData: {fileID: 11400000, guid: 7468b1809d856c74e9472e11473264b0, type: 2}
   initialSpawnDistance: 10
