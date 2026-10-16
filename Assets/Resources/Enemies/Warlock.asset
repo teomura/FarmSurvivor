@@ -17,6 +17,6 @@ MonoBehaviour:
   hp: 150
   hpDropChance: 25
   movementSpeed: 2
-  attackSpeed: 2
+  attackSpeed: 2.5
   damage: 25
   attacks: 0000000001000000i

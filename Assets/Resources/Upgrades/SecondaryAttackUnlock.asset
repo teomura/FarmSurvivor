@@ -15,4 +15,4 @@ MonoBehaviour:
   upgradeType: 4
   modifier: 1
   image: {fileID: -181907988, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
-  description: Unlock flying shovels
+  description: Unlock throwing shovels
